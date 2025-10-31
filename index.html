@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wintermere Lawn - Winter Garden & Windermere, FL</title>
     
-    <link href="./dist/output.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
@@ -77,7 +77,8 @@
             </a>
             <div class="md:hidden">
                 <button aria-label="Menu" class="text-gray-600 hover:text-primary-green focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]</button>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]
+                </button>
             </div>
         </div>
   
@@ -100,7 +101,8 @@
                     <p class="text-xl sm:text-2xl text-gray-600 font-medium mb-10">
        
                         We don't just cut grass—we craft landscapes.
- Our mission is simple: **meticulous care and attention to every detail**, from the sharpest edge to the final whisper of air from the blower, ensuring your <span class="font-semibold text-dark-blue">[...]</p>
+ Our mission is simple: **meticulous care and attention to every detail**, from the sharpest edge to the final whisper of air from the blower, ensuring your <span class="font-semibold text-dark-blue">[...]
+ </p>
 
                     <a href="#quote" class="btn-primary text-white font-bold py-3 px-8 rounded-xl shadow-lg transition duration-300 text-lg">
                         Request Your Free Quote Today
@@ -153,7 +155,7 @@
                         <h3 class="text-2xl font-semibold text-dark-blue mb-3">Power Blowing</h3>
                         <p class="text-gray-600">
                             Thorough cleanup of all hard surfaces, leaves, and debris, 
- Leaving your property spotless—the final touch of detail we guarantee.
+ leaving your property spotless—the final touch of detail we guarantee.
  </p>
                     </div>
                 </div>
@@ -187,7 +189,26 @@
                     <div>
                         <label for="contact" class="block text-sm font-medium text-gray-700">Phone Number or Email Address (Required)</label>
       
-                        <input type="text" id="contact" name="contact" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 bo[...] </textarea>
+                        <input type="text" id="contact" name="contact" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 bo[...]  
+                    </div>
+
+                    <div>
+                        <label for="yardSize" class="block text-sm 
+ font-medium text-gray-700">Approximate Yard Size (Optional)</label>
+                        <select id="yardSize" name="yardSize" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 border">
+                            <option value="">Select a size...</option>
+                            <option 
+ value="Small (less than 1/4 acre)">Small (less than 1/4 acre)</option>
+                            <option value="Medium (1/4 to 1/2 acre)">Medium (1/4 to 1/2 acre)</option>
+                            <option>Large (1/2 acre or more)</option>
+                       
+ </select>
+                    </div>
+
+                    <div>
+                        <label for="details" class="block text-sm font-medium text-gray-700">Additional Details / Needs (Optional)</label>
+                        <textarea id="details" 
+ name="details" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 border" placeholder="e.g., specific instructions, gate co[...]  
                     </div>
                     
                     <div id="messageBox" class="hidden text-center p-3 rounded-lg font-medium text-white bg-red-500"></div>
@@ -197,15 +218,15 @@
                         Submit for Quote
                     </button>
                 </form>
-            </div>
- 
+            </div> 
         </section>
 
         <footer id="contact" class="bg-dark-blue text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-extrabold mb-8">
                     Connect With Us
-                </h2>
+                
+ </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 max-w-4xl mx-auto">
                     <div class="p-4 bg-blue-900/50 rounded-lg">
                         <p class="text-sm uppercase opacity-75 mb-1">Owner / Operator</p>
@@ -225,6 +246,7 @@
                         <p class="text-sm uppercase opacity-75 mb-1">Phone Number</p>
                         <a href="tel:+19012624213" class="text-xl font-semibold text-primary-green hover:text-emerald-300 transition duration-150">
                             (901) 262-4213
+  
                         </a>
                     </div>
                 </div>
