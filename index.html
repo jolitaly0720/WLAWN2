@@ -3,288 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wintermere Lawn | Professional Mowing in Winter Garden & Windermere, FL</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- UPDATED: Added Bebas Neue font for the header logo -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Wintermere Lawn - Winter Garden & Windermere, FL</title>
+    
+    <link href="./dist/output.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* CSS smooth scrolling removed to prevent conflicts; JavaScript now handles smooth scroll. */
-        
-        /* Custom colors based on user request */
+        /* ADDED: Smooth scrolling for all anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
-            --color-dark-gray: #6B6E6A; /* Main Background */
-            --color-primary-green: #32B887; /* Accent */
-            --color-light-mint: #E0F5F0; /* Text and light elements */
+            --primary-green: #10B981;
+ /* Emerald 500 */
+            --dark-blue: #1E3A8A;
+ /* Blue 800 */
+            --text-color: #1F2937;
+ /* Gray 800 */
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--color-dark-gray); /* Dark Gray Background */
+ color: var(--text-color);
         }
-        .text-mint { color: var(--color-light-mint); }
-        .bg-mint { background-color: var(--color-light-mint); }
-        .text-primary-green { color: var(--color-primary-green); }
-        .bg-primary-green { background-color: var(--color-primary-green); }
+        .bg-hero {
+            background-color: #ECFDF5;
+ /* Green 50 - Very light green background */
+        }
+        /* Custom animation for the new logo - a gentle pulse */
+        @keyframes logoPulse {
+            0% { transform: scale(1);
+ opacity: 1; }
+            50% { transform: scale(1.03); opacity: 0.95;
+ }
+            100% { transform: scale(1); opacity: 1;
+ }
+        }
+        .animate-logo-pulse {
+            animation: logoPulse 2.5s ease-in-out infinite;
+ }
 
-        /* NEW: Custom class for the distinct header logo font */
-        .logo-font {
-            font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.15em; 
+        /* Custom styling for the primary button */
+        .btn-primary {
+            background-color: var(--primary-green);
+ transition: transform 0.2s, box-shadow 0.2s;
         }
-
-        /* Custom utility for the hero section background */
-        .hero-bg {
-            /* Dimensions (1920x800) removed from the placeholder URL */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/222/FFF');
-            background-size: cover;
-            background-position: center;
+        .btn-primary:hover {
+            background-color: #059669;
+ /* Darker green on hover */
+            transform: translateY(-2px);
+ box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
         }
+        
     </style>
 </head>
-<body class="text-mint antialiased">
+<body class="bg-white">
 
-    <!-- Header & Navigation --><header class="sticky top-0 z-50 shadow-lg bg-gray-900/90 backdrop-blur-sm">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <!-- UPDATED: Added image and used flex to align the image and text -->
-            <a href="#" class="flex items-center space-x-3 text-2xl font-extrabold text-primary-green tracking-wider logo-font">
-                <!-- Placeholder Image (32x32, primary green background, "WL" text) -->
-                <img src="https://placehold.co/32x32/32B887/000?text=WL" alt="Wintermere Lawn Logo" class="h-8 w-8 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/32x32/32B887[...]" />
-                <span>Wintermere Lawn</span>
+    <header class="shadow-lg bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="font-extrabold tracking-tight flex items-center">
+                <img src="wintermerelawn.png" alt="Wintermere Lawn Logo" class="h-10">
+ 
             </a>
-            <div class="flex space-x-4">
-                <!-- Single CTA: onclick added to prevent default jump and ensure smooth scroll --><a href="#quote" onclick="scrollToQuote(event)" class="px-4 py-2 text-sm font-semibold rounded-full b[...]>
-                    Get a Free Quote
-                </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-primary-green transition duration-150 font-medium">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-primary-green transition duration-150 font-medium">Services</a>
+                <a href="#quote" class="text-gray-600 hover:text-primary-green transition duration-150 font-medium">Get a Quote</a>
+      
+                <a href="#contact" class="text-gray-600 hover:text-primary-green transition duration-150 font-medium">Contact Us</a>
+            </nav>
+            <a href="#quote" class="hidden md:block btn-primary text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                Request Quote
+            </a>
+            <div class="md:hidden">
+                <button aria-label="Menu" class="text-gray-600 hover:text-primary-green focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [...]</button>
             </div>
-        </nav>
+        </div>
+  
     </header>
 
     <main>
-        <!-- Hero Section (Logo Removed) --><section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
-            <div class="p-6 md:p-12 max-w-4xl">
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight text-mint">
-                    Flawless Lawns, Effortless Living.
-                </h1>
-                <p class="text-xl sm:text-2xl font-light text-primary-green">
-                    Specializing in Premium Mowing Services for <span class="font-bold">Winter Garden</span> & <span class="font-bold">Windermere, FL</span>.
-                </p>
-            </div>
-        </section>
-
-        <!-- Our Promise Section --><section class="py-16 md:py-24">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-mint">
-                    Our Promise
-                </h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Promise Card 1: Yard Care --><div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
-                        <!-- Icon Removed --><h3 class="text-2xl font-semibold mb-3 text-mint">Personalized Yard Care</h3>
-                        <p class="text-sm font-light text-gray-200">
-                            We don't just mow; we treat every blade of grass with the respect it deserves. Your lawn's health and vitality is our primary concern.
-                        </p>
+        <section id="home" class="bg-hero pt-16 pb-24 sm:pt-24 sm:pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex justify-center mb-6">
+  
+                        <img src="wintermerelawn.png" alt="Wintermere Lawn Logo" class="h-28 animate-logo-pulse">
                     </div>
-                    <!-- Promise Card 2: Attention to Detail --><div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
-                        <!-- Icon Removed --><h3 class="text-2xl font-semibold mb-3 text-mint">Unwavering Attention to Detail</h3>
-                        <p class="text-sm font-light text-gray-200">
-                            From crisp edging to spotless clean-up, we ensure every corner is immaculate. We see the details so you only see perfection.
-                        </p>
-                    </div>
-                    <!-- Promise Card 3: Customer Satisfaction --><div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
-                        <div class="text-5xl mb-4 text-primary-green">⭐</div>
-                        <h3 class="text-2xl font-semibold mb-3 text-mint">Guaranteed Customer Satisfaction</h3>
-                        <p class="text-sm font-light text-gray-200">
-                            Our job isn't done until you are 100% satisfied. We build relationships, not just client lists, ensuring your experience is excellent.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Request Quote Form Section (Target for #quote) --><section id="quote" class="py-16 md:py-24 bg-gray-900">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-primary-green">
-                    Get a Free Quote
-                </h2>
-                <p class="text-center text-xl mb-12 text-mint">
-                    Tell us about your lawn and we'll be in touch with a personalized estimate.
-                </p>
-
-                <!-- Success Message Container -->
-                <div id="successMessage" class="hidden p-4 mb-8 text-lg font-semibold text-center rounded-lg bg-primary-green text-gray-900 shadow-xl transition duration-300 opacity-0">
-                    Thank you for your submission! Please allow 24 hours to receive your quote.
-                </div>
-
-                <!-- UPDATED: Form action URL points to Basin endpoint, removed Formspree hidden field -->
-                <form id="quoteForm" action="https://usebasin.com/f/b385226b2ca0" method="POST" class="space-y-6">
                     
-                    <!-- Required Fields --><div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-mint mb-2">Full Name</label>
-                            <input type="text" id="name" name="Name" required
-                                class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                                placeholder="John Doe">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+      
+                        The <span class="text-dark-blue">Gold Standard</span> in Lawn Perfection
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl text-gray-600 font-medium mb-10">
+       
+                        We don't just cut grass—we craft landscapes.
+ Our mission is simple: **meticulous care and attention to every detail**, from the sharpest edge to the final whisper of air from the blower, ensuring your <span class="font-semibold text-dark-blue">[...]</p>
+
+                    <a href="#quote" class="btn-primary text-white font-bold py-3 px-8 rounded-xl shadow-lg transition duration-300 text-lg">
+                        Request Your Free Quote Today
+                    </a>
+                </div>
+     
+            </div>
+        </section>
+
+        <section id="services" class="py-20 sm:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
+                    Our Core Services
+        
+                </h2>
+                <p class="text-xl text-center text-gray-500 mb-12">
+                    Three simple steps to a pristine yard, every single time.
+ </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-green/20">
+                        <div class="text-4xl text-primary-green mb-4">
+                    
+         &#x2699;
                         </div>
-                        <div>
-                            <label for="address" class="block text-sm font-medium text-mint mb-2">Service Address</label>
-                            <input type="text" id="address" name="Address" required
-                                class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                                placeholder="123 Main St, Windermere, FL">
-                        </div>
-                        <div>
-                            <label for="contact" class="block text-sm font-medium text-mint mb-2">Phone or Email Address</label>
-                            <input type="text" id="contact" name="Contact Info" required
-                                class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                                placeholder="(901) 262-4213 or email@example.com">
-                        </div>
+                        <h3 class="text-2xl font-semibold text-dark-blue mb-3">Precision Mowing</h3>
+                        <p class="text-gray-600">
+                            Professional, consistent cuts with height adjustment tailored to your 
+ specific grass type and seasonal health, ensuring a lush, green carpet.
+ </p>
                     </div>
 
-                    <!-- Optional Details --><div>
-                        <label for="details" class="block text-sm font-medium text-mint mb-2">Optional Details (Yard Size, Gate Code, Specific Needs)</label>
-                        <textarea id="details" name="Optional Details" rows="4"
-                            class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                            placeholder="My yard is approximately 1/4 acre. We need service on Tuesdays. The gate code is 1234#."
-                        ></textarea>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-green/20">
+                        <div class="text-4xl text-primary-green mb-4">
+                    
+         &#x2702;
+                        </div>
+                        <h3 class="text-2xl font-semibold text-dark-blue mb-3">Laser Edging</h3>
+                        <p class="text-gray-600">
+                            Creating crisp, defined lines along driveways, walkways, and garden 
+ beds, making the difference between an average yard and an exceptional one.
+ </p>
                     </div>
 
-                    <button type="submit"
-                        class="w-full py-4 bg-primary-green text-gray-900 font-extrabold rounded-lg shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.01]">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-green/20">
+                        <div class="text-4xl text-primary-green mb-4">
+                    
+         &#x1F32A;
+                        </div>
+                        <h3 class="text-2xl font-semibold text-dark-blue mb-3">Power Blowing</h3>
+                        <p class="text-gray-600">
+                            Thorough cleanup of all hard surfaces, leaves, and debris, 
+ Leaving your property spotless—the final touch of detail we guarantee.
+ </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="quote" class="py-20 sm:py-32 bg-gray-100">
+            <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+  
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
+                    Request Your Free Quote
+                </h2>
+                <p class="text-lg text-center text-gray-600 mb-10">
+                    Tell 
+ us about your yard in Winter Garden or Windermere, and we'll get back to you quickly!
+ </p>
+
+                <form id="quoteForm" class="space-y-6 bg-white p-8 rounded-xl shadow-2xl border-t-4 border-primary-green">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" 
+ id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 border">
+                    </div>
+
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700">Service Address</label>
+                  
+                <input type="text" id="address" name="address" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 border">
+                    </div>
+
+                    <div>
+                        <label for="contact" class="block text-sm font-medium text-gray-700">Phone Number or Email Address (Required)</label>
+      
+                        <input type="text" id="contact" name="contact" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-green focus:ring-primary-green p-3 bo[...] </textarea>
+                    </div>
+                    
+                    <div id="messageBox" class="hidden text-center p-3 rounded-lg font-medium text-white bg-red-500"></div>
+
+       
+                    <button type="submit" class="w-full btn-primary text-white font-bold py-3 px-4 rounded-xl shadow-md transition duration-300 text-lg">
                         Submit for Quote
                     </button>
-                    <!-- Removed the mailto explanatory text as requested -->
                 </form>
             </div>
+ 
         </section>
 
-        <!-- Contact Section (Target for #contact) - Still present for the details below --><section id="contact" class="py-12 md:py-16">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-                <h2 class="text-4xl font-bold mb-4 text-mint">
-                    Contact Us
+        <footer id="contact" class="bg-dark-blue text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold mb-8">
+                    Connect With Us
                 </h2>
-                <p class="text-xl mb-8 text-primary-green">
-                    We're here to answer any questions you have about our service area and schedules.
-                </p>
-                <div class="space-y-4">
-                    <div class="p-4 bg-gray-700/50 rounded-lg">
-                        <p class="text-lg font-semibold text-mint">Email Address</p>
-                        <a href="mailto:wintermerelawn@yahoo.com" class="text-2xl font-bold text-primary-green hover:underline">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 max-w-4xl mx-auto">
+                    <div class="p-4 bg-blue-900/50 rounded-lg">
+                        <p class="text-sm uppercase opacity-75 mb-1">Owner / Operator</p>
+                     
+                        <p class="text-xl font-semibold">Justin Olita</p>
+                    </div>
+
+                    <div class="p-4 bg-blue-900/50 rounded-lg">
+                        <p class="text-sm uppercase opacity-75 mb-1">Email Address</p>
+                    
+                        <a href="mailto:wintermerelawn@yahoo.com" class="text-xl font-semibold text-primary-green hover:text-emerald-300 transition duration-150">
                             wintermerelawn@yahoo.com
                         </a>
                     </div>
-                    <div class="p-4 bg-gray-700/50 rounded-lg">
-                        <p class="text-lg font-semibold text-mint">Phone Number</p>
-                        <a href="tel:+19012624213" class="text-2xl font-bold text-primary-green hover:underline">
+                 
+                    <div class="p-4 bg-blue-900/50 rounded-lg">
+                        <p class="text-sm uppercase opacity-75 mb-1">Phone Number</p>
+                        <a href="tel:+19012624213" class="text-xl font-semibold text-primary-green hover:text-emerald-300 transition duration-150">
                             (901) 262-4213
                         </a>
                     </div>
                 </div>
-            </div>
-        </section>
 
+                <p class="mt-12 text-sm opacity-60">
+                    &copy;
+ 2024 Wintermere Lawn Care. Serving Winter Garden and Windermere, FL.
+ </p>
+            </div>
+        </footer>
     </main>
 
-    <!-- Footer --><footer class="bg-gray-900 py-6 mt-12">
-        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
-            &copy; 2025 Wintermere Lawn. Servicing Winter Garden & Windermere, FL.
-        </div>
-    </footer>
-
-    <!-- JavaScript for reliable smooth scrolling and form submission handling -->
     <script>
-        /**
-         * Custom scroll handler to prevent the default anchor jump and use
-         * JavaScript's scrollIntoView for smooth, controlled scrolling.
-         */
-        function scrollToQuote(event) {
-            // Prevent the default anchor jump behavior
-            event.preventDefault();
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the default form submission
 
-            // Get the target element ID from the href attribute
-            const targetId = event.currentTarget.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                // Use scrollIntoView with smooth behavior
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            const form = event.target;
+            const name = document.getElementById('name').value;
+            const address 
+ = document.getElementById('address').value;
+            const contact = document.getElementById('contact').value;
+            const yardSize = document.getElementById('yardSize').value;
+            const details = document.getElementById('details').value;
+            const messageBox = document.getElementById('messageBox');
+            
+            // Basic validation for required fields
+          
+   if (!name || !address || !contact) {
+                messageBox.textContent = 'Please fill out all required fields (Name, Address, and Contact).';
+                messageBox.classList.remove('hidden');
+                messageBox.classList.remove('bg-green-500');
+ messageBox.classList.add('bg-red-500');
+                return;
             }
-        }
 
-        /**
-         * Handles form submission: asynchronously posts data to Basin, shows success message.
-         */
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Script initialized. Checking for form elements..."); // Diagnostic message
-
-            const form = document.getElementById('quoteForm');
-            const successMessage = document.getElementById('successMessage');
-
-            if (form && successMessage) {
-                console.log("Form and success message found. Adding submit listener."); // Diagnostic message
-                
-                form.addEventListener('submit', function(event) {
-                    // Prevent the default browser action (page navigation)
-                    event.preventDefault();
-
-                    const formData = new FormData(form);
-                    const formAction = form.action;
-
-                    // Set button state to loading/disabled during submission (optional, but good practice)
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
-
-                    fetch(formAction, {
-                        method: 'POST',
-                        body: formData,
-                        // Basin expects form data, but keeping the JSON accept header is generally harmless for API calls
-                        headers: {
-                            'Accept': 'application/json' 
-                        }
-                    })
-                    .then(response => {
-                        // The form submission is complete (Basin handles the email)
-                        if (response.ok) {
-                            // Reset form fields immediately on success
-                            form.reset(); 
-
-                            // --- 1. DISPLAY SUCCESS MESSAGE ---
-                            successMessage.classList.remove('hidden', 'opacity-0');
-                            successMessage.classList.add('opacity-100');
-
-                            // Set a timer to hide the message after 5 seconds (5000ms)
-                            setTimeout(() => {
-                                // Fade out the message
-                                successMessage.classList.remove('opacity-100');
-                                successMessage.classList.add('opacity-0');
-                                
-                                // Hide element completely after transition finishes
-                                setTimeout(() => {
-                                    successMessage.classList.add('hidden');
-                                }, 300); 
-
-                            }, 5000); // Wait 5 seconds (5000ms) before hiding
-                        } else {
-                            // Handle non-2xx responses from the form service (e.g., Basin error)
-                            console.error('Form submission failed with status:', response.status);
-                            // Log body for more info if available (can only read once)
-                            response.text().then(text => console.error('Response body:', text));
-                            console.error('Submission failed. Please check the console for errors.');
-                        }
-                    })
-                    .catch(error => {
-                        // Handle network errors 
-                        console.error('Network or fetch error:', error);
-                        console.error('A network error occurred. Please try again later.');
-                    })
-                    .finally(() => {
-                        // Re-enable the button regardless of success or failure
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Submit for Quote';
-                    });
-                });
-            }
+            // Construct the email body
+            let body = `--- NEW QUOTE REQUEST ---\n`;
+ body += `Name: ${name}\n`;
+            body += `Service Address: ${address}\n`;
+            body += `Contact (Phone/Email): ${contact}\n`;
+ body += `Approximate Yard Size: ${yardSize || 'Not specified'}\n\n`;
+            body += `Details:\n${details || 'No additional details provided.'}\n`;
+ // Mailto construction
+            const recipient = 'wintermerelawn@yahoo.com'; // **CORRECTED EMAIL ADDRESS**
+ const subject = encodeURIComponent(`New Quote Request for ${name}`);
+            const encodedBody = encodeURIComponent(body);
+            
+            const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${encodedBody}`;
+ // Open the user's default email client
+            window.location.href = mailtoLink;
+ // Display success message and clear form (after a short delay to allow mailto to trigger)
+            setTimeout(() => {
+                messageBox.textContent = 'Quote request submitted! Your email client should now be open.';
+                messageBox.classList.remove('hidden', 'bg-red-500');
+                messageBox.classList.add('bg-green-500');
+           
+      form.reset(); // Clear the form fields
+            }, 100);
         });
     </script>
-
 </body>
 </html>
