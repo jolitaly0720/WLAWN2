@@ -219,11 +219,10 @@
 
         /**
          * UPDATED: Handles form submission using JavaScript to construct a reliable mailto: link 
-         * that includes all form data in the email body.
+         * that includes all form data in the email body, and uses a static subject line.
          */
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('quoteForm');
-            // This is the new, corrected recipient email for the form
             const recipientEmail = 'wintermerelawn@yahoo.com'; 
 
             if (form) {
@@ -231,17 +230,16 @@
                     // 1. Prevent the default form submission (which would try to navigate the page)
                     event.preventDefault();
 
-                    // 2. Gather form data (using document.getElementById().value is correct)
+                    // 2. Gather form data 
                     const name = document.getElementById('name').value;
                     const address = document.getElementById('address').value;
                     const contact = document.getElementById('contact').value;
                     const details = document.getElementById('details').value;
 
-                    // 3. Construct the email subject and body
-                    // The subject should be URI-encoded for special characters
-                    const emailSubject = encodeURIComponent(`New Quote Request from Website - ${name}`);
+                    // 3. Construct the email subject (UPDATED HERE)
+                    const emailSubject = encodeURIComponent('New Quote Request from WintermereLawn.com');
                     
-                    // The body uses carriage return/line feed (%0D%0A) to create proper line breaks in the email
+                    // 4. Construct the email body using URL-encoded line breaks (%0D%0A)
                     const emailBodyContent = 
                         'Quote Request Details:%0D%0A%0D%0A' +
                         `Full Name: ${name}%0D%0A` +
@@ -251,13 +249,13 @@
                         `${details}%0D%0A%0D%0A` +
                         '-- Sent via Wintermere Lawn Website Form --';
 
-                    // 4. URI-encode the entire email body
+                    // 5. URI-encode the entire email body
                     const emailBody = encodeURIComponent(emailBodyContent);
 
-                    // 5. Construct the full mailto link with subject and body parameters
+                    // 6. Construct the full mailto link with subject and body parameters
                     const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
                     
-                    // 6. Open the user's default email client
+                    // 7. Open the user's default email client
                     window.location.href = mailtoLink;
                 });
             }
