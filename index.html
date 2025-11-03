@@ -218,8 +218,8 @@
         }
 
         /**
-         * UPDATED: Handles form submission using JavaScript to construct a reliable mailto: link 
-         * that includes all form data in the email body, and uses a static subject line.
+         * FINAL FIX: Handles form submission using JavaScript to construct a reliable mailto: link 
+         * that includes all form data in the email body, and uses a STATIC, pre-encoded subject line.
          */
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('quoteForm');
@@ -236,10 +236,9 @@
                     const contact = document.getElementById('contact').value;
                     const details = document.getElementById('details').value;
 
-                    // 3. Construct the email subject (CRUCIAL FIX HERE)
-                    // We define the static subject string without encoding, as the final `mailtoLink` construction will handle the encoding.
-                    const subjectString = 'New Quote Request from WintermereLawn.com';
-                    const emailSubject = encodeURIComponent(subjectString); 
+                    // 3. Construct the email subject (MANUALLY ENCODED FIX)
+                    // We define the subject with %20 for spaces to prevent the browser from showing %20.
+                    const emailSubject = 'New%20Quote%20Request%20from%20WintermereLawn.com';
                     
                     // 4. Construct the email body using URL-encoded line breaks (%0D%0A)
                     const emailBodyContent = 
@@ -251,7 +250,7 @@
                         `${details}%0D%0A%0D%0A` +
                         '-- Sent via Wintermere Lawn Website Form --';
 
-                    // 5. URI-encode the entire email body
+                    // 5. URI-encode the entire email body (still necessary for form data)
                     const emailBody = encodeURIComponent(emailBodyContent);
 
                     // 6. Construct the full mailto link with subject and body parameters
