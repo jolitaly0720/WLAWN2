@@ -109,7 +109,7 @@
                     Thank you for your submission! Please allow 24 hours to receive your quote.
                 </div>
 
-                <form id="quoteForm" action="https://usebasin.com/f/b385226b2ca0" method="POST" class="space-y-6">
+                <form id="quoteForm" action="mailto:wintermerelawn@yahoo.com" enctype="text/plain" class="space-y-6">
                     
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
@@ -120,13 +120,13 @@
                         </div>
                         <div>
                             <label for="address" class="block text-sm font-medium text-mint mb-2">Service Address</label>
-                            <input type="text" id="address" name="Address" required
+                             <input type="text" id="address" name="Service Address" required
                                 class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
                                 placeholder="123 Main St, Windermere, FL">
                         </div>
                         <div>
                             <label for="contact" class="block text-sm font-medium text-mint mb-2">Phone or Email Address</label>
-                            <input type="text" id="contact" name="Contact Info" required
+                             <input type="text" id="contact" name="Contact Info" required
                                 class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
                                 placeholder="(901) 262-4213 or email@example.com">
                         </div>
@@ -147,7 +147,6 @@
                     </form>
             </div>
         </section>
-
         <section id="contact" class="py-12 md:py-16">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
                 <h2 class="text-4xl font-bold mb-4 text-mint">
@@ -202,81 +201,10 @@
             }
         }
 
-        /**
-         * Handles form submission: asynchronously posts data to Basin, shows success message.
+        /*
+         * DELETED the previous JavaScript form submission handler (fetch/Basin logic)
+         * to allow the mailto: action to execute when the form is submitted.
          */
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Script initialized. Checking for form elements..."); // Diagnostic message
-
-            const form = document.getElementById('quoteForm');
-            const successMessage = document.getElementById('successMessage');
-
-            if (form && successMessage) {
-                console.log("Form and success message found. Adding submit listener."); // Diagnostic message
-                
-                form.addEventListener('submit', function(event) {
-                    // Prevent the default browser action (page navigation)
-                    event.preventDefault();
-
-                    const formData = new FormData(form);
-                    const formAction = form.action;
-
-                    // Set button state to loading/disabled during submission (optional, but good practice)
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
-
-                    fetch(formAction, {
-                        method: 'POST',
-                        body: formData,
-                        // Basin expects form data, but keeping the JSON accept header is generally harmless for API calls
-                        headers: {
-                            'Accept': 'application/json' 
-                        }
-                    })
-                    .then(response => {
-                        // The form submission is complete (Basin handles the email)
-                        if (response.ok) {
-                            // Reset form fields immediately on success
-                            form.reset(); 
-
-                            // --- 1. DISPLAY SUCCESS MESSAGE ---
-                            successMessage.classList.remove('hidden', 'opacity-0');
-                            successMessage.classList.add('opacity-100');
-
-                            // Set a timer to hide the message after 5 seconds (5000ms)
-                            setTimeout(() => {
-                                // Fade out the message
-                                successMessage.classList.remove('opacity-100');
-                                successMessage.classList.add('opacity-0');
-                                
-                                // Hide element completely after transition finishes
-                                setTimeout(() => {
-                                    successMessage.classList.add('hidden');
-                                }, 300); 
-
-                            }, 5000); // Wait 5 seconds (5000ms) before hiding
-                        } else {
-                            // Handle non-2xx responses from the form service (e.g., Basin error)
-                            console.error('Form submission failed with status:', response.status);
-                            // Log body for more info if available (can only read once)
-                            response.text().then(text => console.error('Response body:', text));
-                            console.error('Submission failed. Please check the console for errors.');
-                        }
-                    })
-                    .catch(error => {
-                        // Handle network errors 
-                        console.error('Network or fetch error:', error);
-                        console.error('A network error occurred. Please try again later.');
-                    })
-                    .finally(() => {
-                        // Re-enable the button regardless of success or failure
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Submit for Quote';
-                    });
-                });
-            }
-        });
     </script>
 
 </body>
