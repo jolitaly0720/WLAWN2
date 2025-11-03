@@ -219,7 +219,8 @@
 
         /**
          * FINAL FIX: Handles form submission using JavaScript to construct a reliable mailto: link 
-         * that includes all form data in the email body, and uses a STATIC, pre-encoded subject line.
+         * that fixes the body encoding issue by removing the final encodeURIComponent call 
+         * and performing a global replacement of spaces.
          */
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('quoteForm');
@@ -236,12 +237,12 @@
                     const contact = document.getElementById('contact').value;
                     const details = document.getElementById('details').value;
 
-                    // 3. Construct the email subject (MANUALLY ENCODED FIX)
-                    // We define the subject with %20 for spaces to prevent the browser from showing %20.
+                    // 3. Construct the email subject (Still manually encoded for reliability)
                     const emailSubject = 'New%20Quote%20Request%20from%20WintermereLawn.com';
                     
                     // 4. Construct the email body using URL-encoded line breaks (%0D%0A)
-                    const emailBodyContent = 
+                    // We intentionally leave the line breaks encoded here.
+                    let emailBodyContent = 
                         'Quote Request Details:%0D%0A%0D%0A' +
                         `Full Name: ${name}%0D%0A` +
                         `Service Address: ${address}%0D%0A` +
@@ -250,8 +251,11 @@
                         `${details}%0D%0A%0D%0A` +
                         '-- Sent via Wintermere Lawn Website Form --';
 
-                    // 5. URI-encode the entire email body (still necessary for form data)
-                    const emailBody = encodeURIComponent(emailBodyContent);
+                    // 5. CRITICAL FIX: Replace all spaces with '+' and also encode other special characters
+                    // This uses the traditional 'application/x-www-form-urlencoded' standard 
+                    // which is often decoded better by email clients.
+                    let emailBody = encodeURIComponent(emailBodyContent)
+                        .replace(/%20/g, '+'); // Replace %20 (space) with +
 
                     // 6. Construct the full mailto link with subject and body parameters
                     const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
