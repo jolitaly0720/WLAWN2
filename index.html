@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wintermere Lawn | Professional Mowing in Winter Garden & Windermere, FL</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -12,22 +12,13 @@
       --color-primary-green: #32B887;
       --color-light-mint: #E0F5F0;
     }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--color-dark-gray);
-    }
+    body { font-family: 'Inter', sans-serif; background-color: var(--color-dark-gray); }
     .text-mint { color: var(--color-light-mint); }
-    .bg-mint { background-color: var(--color-light-mint); }
     .text-primary-green { color: var(--color-primary-green); }
-    .bg-primary-green { background-color: var(--color-primary-green); }
-    .logo-font {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.15em;
-    }
+    .logo-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; }
     .hero-bg {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/222/FFF');
-      background-size: cover;
-      background-position: center;
+      background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('https://placehold.co/222/FFF');
+      background-size: cover; background-position: center;
     }
   </style>
 </head>
@@ -50,12 +41,8 @@
   <main>
     <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
       <div class="p-6 md:p-12 max-w-4xl">
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight text-mint">
-          Flawless Lawns, Effortless Living.
-        </h1>
-        <p class="text-xl sm:text-2xl font-light text-primary-green">
-          Specializing in Premium Mowing Services for <span class="font-bold">Winter Garden</span> & <span class="font-bold">Windermere, FL</span>.
-        </p>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight text-mint">Flawless Lawns, Effortless Living.</h1>
+        <p class="text-xl sm:text-2xl font-light text-primary-green">Specializing in Premium Mowing Services for <span class="font-bold">Winter Garden</span> & <span class="font-bold">Windermere, FL</span>.</p>
       </div>
     </section>
 
@@ -65,22 +52,16 @@
         <div class="grid md:grid-cols-3 gap-8">
           <div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
             <h3 class="text-2xl font-semibold mb-3 text-mint">Personalized Yard Care</h3>
-            <p class="text-sm font-light text-gray-200">
-              We don't just mow; we treat every blade of grass with the respect it deserves.
-            </p>
+            <p class="text-sm font-light text-gray-200">We don't just mow; we treat every blade of grass with the respect it deserves.</p>
           </div>
           <div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
             <h3 class="text-2xl font-semibold mb-3 text-mint">Unwavering Attention to Detail</h3>
-            <p class="text-sm font-light text-gray-200">
-              From crisp edging to spotless clean-up, we ensure every corner is immaculate.
-            </p>
+            <p class="text-sm font-light text-gray-200">From crisp edging to spotless clean-up, we ensure every corner is immaculate.</p>
           </div>
           <div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
             <div class="text-5xl mb-4 text-primary-green">⭐</div>
             <h3 class="text-2xl font-semibold mb-3 text-mint">Guaranteed Customer Satisfaction</h3>
-            <p class="text-sm font-light text-gray-200">
-              Our job isn't done until you are 100% satisfied.
-            </p>
+            <p class="text-sm font-light text-gray-200">Our job isn't done until you are 100% satisfied.</p>
           </div>
         </div>
       </div>
@@ -99,33 +80,24 @@
           <div class="grid sm:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block text-sm font-medium text-mint mb-2">Full Name</label>
-              <input type="text" id="name" name="Name" required
-                class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                placeholder="John Doe">
+              <input type="text" id="name" name="Name" required class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition" placeholder="John Doe">
             </div>
             <div>
               <label for="address" class="block text-sm font-medium text-mint mb-2">Service Address</label>
-              <input type="text" id="address" name="Service Address" required
-                class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                placeholder="123 Main St, Windermere, FL">
+              <input type="text" id="address" name="Service Address" required class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition" placeholder="123 Main St, Windermere, FL">
             </div>
             <div>
               <label for="contact" class="block text-sm font-medium text-mint mb-2">Phone or Email Address</label>
-              <input type="text" id="contact" name="Contact Info" required
-                class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-                placeholder="(901) 262-4213 or email@example.com">
+              <input type="text" id="contact" name="Contact Info" required class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition" placeholder="(901) 262-4213 or email@example.com">
             </div>
           </div>
 
           <div>
-            <label for="details" class="block text-sm font-medium text-mint mb-2">Optional Details</label>
-            <textarea id="details" name="Optional Details" rows="4"
-              class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-              placeholder="My yard is approximately 1/4 acre."></textarea>
+            <label for="details" class="block text-sm font-medium text-mint mb-2">Optional Details (Yard Size, Gate Code, Specific Needs)</label>
+            <textarea id="details" name="Optional Details" rows="4" class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition" placeholder="My yard is approximately 1/4 acre."></textarea>
           </div>
 
-          <button type="submit"
-            class="w-full py-4 bg-primary-green text-gray-900 font-extrabold rounded-lg shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.01]">
+          <button type="submit" class="w-full py-4 bg-primary-green text-gray-900 font-extrabold rounded-lg shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.01]">
             Submit for Quote
           </button>
         </form>
@@ -139,15 +111,11 @@
         <div class="space-y-4">
           <div class="p-4 bg-gray-700/50 rounded-lg">
             <p class="text-lg font-semibold text-mint">Email Address</p>
-            <a href="mailto:wintermerelawn@yahoo.com" class="text-2xl font-bold text-primary-green hover:underline">
-              wintermerelawn@yahoo.com
-            </a>
+            <a href="mailto:wintermerelawn@yahoo.com" class="text-2xl font-bold text-primary-green hover:underline">wintermerelawn@yahoo.com</a>
           </div>
           <div class="p-4 bg-gray-700/50 rounded-lg">
             <p class="text-lg font-semibold text-mint">Phone Number</p>
-            <a href="tel:+19012624213" class="text-2xl font-bold text-primary-green hover:underline">
-              (901) 262-4213
-            </a>
+            <a href="tel:+19012624213" class="text-2xl font-bold text-primary-green hover:underline">(901) 262-4213</a>
           </div>
         </div>
       </div>
@@ -155,16 +123,15 @@
   </main>
 
   <footer class="bg-gray-900 py-6 mt-12">
-    <div class="container mx-auto px-4 text-center text-sm text-gray-400">
-      &copy; 2025 Wintermere Lawn. Servicing Winter Garden & Windermere, FL.
-    </div>
+    <div class="container mx-auto px-4 text-center text-sm text-gray-400">&copy; 2025 Wintermere Lawn. Servicing Winter Garden & Windermere, FL.</div>
   </footer>
 
   <script>
+    // Smooth scrolling helper
     function scrollToQuote(event) {
       event.preventDefault();
-      const targetId = event.currentTarget.getAttribute('href').substring(1);
-      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+      const id = event.currentTarget.getAttribute('href').substring(1);
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -172,22 +139,41 @@
       const successMessage = document.getElementById('successMessage');
       const recipientEmail = 'wintermerelawn@yahoo.com';
 
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
         const name = document.getElementById('name').value.trim();
         const address = document.getElementById('address').value.trim();
         const contact = document.getElementById('contact').value.trim();
         const details = document.getElementById('details').value.trim();
 
-        const subject = encodeURIComponent('New Quote Request from WintermereLawn.com');
-        const body = encodeURIComponent(
-          `Quote Request Details:\n\nFull Name: ${name}\nService Address: ${address}\nContact Info (Phone/Email): ${contact}\n\nOptional Details:\n${details}\n\n-- Sent via Wintermere Lawn Website Form --`
-        ).replace(/%20/g, ' ');
+        // Build the plain text body (no encoding yet)
+        const plainBody =
+`Quote Request Details:
 
-        const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
+Full Name: ${name}
+Service Address: ${address}
+Contact Info (Phone/Email): ${contact}
 
+Optional Details:
+${details}
+
+-- Sent via Wintermere Lawn Website Form --`;
+
+        // 1) encodeURIComponent() -> produces %20 for spaces and %0A for newlines
+        // 2) replace %0A (LF) with %0D%0A (CRLF) which many mail clients prefer for line breaks
+        const encodedBody = encodeURIComponent(plainBody).replace(/%0A/g, '%0D%0A');
+
+        // Subject (encoded)
+        const encodedSubject = encodeURIComponent('New Quote Request from WintermereLawn.com');
+
+        // Construct mailto with percent-encoded values (no '+' for spaces)
+        const mailto = `mailto:${recipientEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+
+        // Open the user's email client
+        window.location.href = mailto;
+
+        // Brief success message
         successMessage.classList.remove('hidden');
         successMessage.style.opacity = '1';
         setTimeout(() => {
@@ -199,6 +185,5 @@
       });
     });
   </script>
-
 </body>
 </html>
