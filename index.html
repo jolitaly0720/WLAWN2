@@ -7,9 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* CSS smooth scrolling removed to prevent conflicts; JavaScript now handles smooth scroll. */
-        
-        /* Custom colors based on user request */
         :root {
             --color-dark-gray: #6B6E6A; /* Main Background */
             --color-primary-green: #32B887; /* Accent */
@@ -17,28 +14,24 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--color-dark-gray); /* Dark Gray Background */
+            background-color: var(--color-dark-gray);
         }
         .text-mint { color: var(--color-light-mint); }
         .bg-mint { background-color: var(--color-light-mint); }
         .text-primary-green { color: var(--color-primary-green); }
         .bg-primary-green { background-color: var(--color-primary-green); }
-
-        /* NEW: Custom class for the distinct header logo font */
         .logo-font {
             font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 0.15em; 
+            letter-spacing: 0.15em;
         }
-
-        /* Custom utility for the hero section background */
         .hero-bg {
-            /* Dimensions (1920x800) removed from the placeholder URL */
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/222/FFF');
             background-size: cover;
             background-position: center;
         }
     </style>
 </head>
+
 <body class="text-mint antialiased">
 
     <header class="sticky top-0 z-50 shadow-lg bg-gray-900/90 backdrop-blur-sm">
@@ -51,12 +44,12 @@
                 <a href="#quote" onclick="scrollToQuote(event)" class="px-4 py-2 text-sm font-semibold rounded-full bg-primary-green text-gray-900 transition hover:bg-opacity-80">
                     Get a Free Quote
                 </a>
-        
             </div>
         </nav>
     </header>
 
     <main>
+        <!-- HERO SECTION -->
         <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
             <div class="p-6 md:p-12 max-w-4xl">
                 <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight text-mint">
@@ -68,30 +61,25 @@
             </div>
         </section>
 
+        <!-- PROMISE SECTION -->
         <section class="py-16 md:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-mint">
-                    Our Promise
-          
-                </h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-mint">Our Promise</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
                         <h3 class="text-2xl font-semibold mb-3 text-mint">Personalized Yard Care</h3>
-                
                         <p class="text-sm font-light text-gray-200">
                             We don't just mow; we treat every blade of grass with the respect it deserves. Your lawn's health and vitality is our primary concern.
                         </p>
                     </div>
                     <div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
                         <h3 class="text-2xl font-semibold mb-3 text-mint">Unwavering Attention to Detail</h3>
-                    
                         <p class="text-sm font-light text-gray-200">
                             From crisp edging to spotless clean-up, we ensure every corner is immaculate. We see the details so you only see perfection.
                         </p>
                     </div>
                     <div class="p-6 bg-gray-700/50 rounded-xl shadow-xl border border-primary-green/50 hover:bg-gray-700 transition duration-300">
                         <div class="text-5xl mb-4 text-primary-green">⭐</div>
-               
                         <h3 class="text-2xl font-semibold mb-3 text-mint">Guaranteed Customer Satisfaction</h3>
                         <p class="text-sm font-light text-gray-200">
                             Our job isn't done until you are 100% satisfied. We build relationships, not just client lists, ensuring your experience is excellent.
@@ -101,12 +89,10 @@
             </div>
         </section>
 
+        <!-- QUOTE FORM -->
         <section id="quote" class="py-16 md:py-24 bg-gray-900">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-              
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-primary-green">
-                    Get a Free Quote
-                </h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-primary-green">Get a Free Quote</h2>
                 <p class="text-center text-xl mb-12 text-mint">
                     Tell us about your lawn and we'll be in touch with a personalized estimate.
                 </p>
@@ -116,83 +102,66 @@
                 </div>
 
                 <form id="quoteForm" class="space-y-6">
-                    
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
-        
                             <label for="name" class="block text-sm font-medium text-mint mb-2">Full Name</label>
                             <input type="text" id="name" name="Name" required
                                 class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
                                 placeholder="John Doe">
                         </div>
                         <div>
-                   
                             <label for="address" class="block text-sm font-medium text-mint mb-2">Service Address</label>
                             <input type="text" id="address" name="Service Address" required
                                 class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-          
                                 placeholder="123 Main St, Windermere, FL">
                         </div>
                         <div>
-                          
                             <label for="contact" class="block text-sm font-medium text-mint mb-2">Phone or Email Address</label>
                             <input type="text" id="contact" name="Contact Info" required
                                 class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-               
                                 placeholder="(901) 262-4213 or email@example.com">
                         </div>
                     </div>
 
                     <div>
-                
                         <label for="details" class="block text-sm font-medium text-mint mb-2">Optional Details (Yard Size, Gate Code, Specific Needs)</label>
                         <textarea id="details" name="Optional Details" rows="4"
                             class="w-full p-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-mint focus:border-primary-green focus:ring-primary-green transition"
-              
                             placeholder="My yard is approximately 1/4 acre. We need service on Tuesdays. The gate code is 1234#."
                         ></textarea>
                     </div>
 
                     <button type="submit"
-                        class="w-full py-4 
-                        bg-primary-green text-gray-900 font-extrabold rounded-lg shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.01]">
+                        class="w-full py-4 bg-primary-green text-gray-900 font-extrabold rounded-lg shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:scale-[1.01]">
                         Submit for Quote
                     </button>
-                    </form>
+                </form>
             </div>
         </section>
 
-     
+        <!-- CONTACT INFO -->
         <section id="contact" class="py-12 md:py-16">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-                <h2 class="text-4xl font-bold mb-4 text-mint">
-                    Contact Us
-                </h2>
-                <p class="text-xl 
-                    mb-8 text-primary-green">
+                <h2 class="text-4xl font-bold mb-4 text-mint">Contact Us</h2>
+                <p class="text-xl mb-8 text-primary-green">
                     We're here to answer any questions you have about our service area and schedules.
                 </p>
                 <div class="space-y-4">
                     <div class="p-4 bg-gray-700/50 rounded-lg">
-          
                         <p class="text-lg font-semibold text-mint">Email Address</p>
                         <a href="mailto:wintermerelawn@yahoo.com" class="text-2xl font-bold text-primary-green hover:underline">
                             wintermerelawn@yahoo.com
                         </a>
- 
                     </div>
                     <div class="p-4 bg-gray-700/50 rounded-lg">
                         <p class="text-lg font-semibold text-mint">Phone Number</p>
                         <a href="tel:+19012624213" class="text-2xl font-bold text-primary-green hover:underline">
- 
                             (901) 262-4213
                         </a>
                     </div>
                 </div>
-            
             </div>
         </section>
-
     </main>
 
     <footer class="bg-gray-900 py-6 mt-12">
@@ -202,68 +171,53 @@
     </footer>
 
     <script>
-        /**
-         * Custom scroll handler for smooth scrolling to anchor links.
-         */
+        // Smooth scroll for links
         function scrollToQuote(event) {
             event.preventDefault();
             const targetId = event.currentTarget.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+            if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
         }
 
-        /**
-         * FINAL FIX: Handles form submission using JavaScript to construct a reliable mailto: link 
-         * that uses the native JavaScript newline character (\n) for maximum compatibility.
-         */
+        // Email form handler
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('quoteForm');
-            const recipientEmail = 'wintermerelawn@yahoo.com'; 
+            const recipientEmail = 'wintermerelawn@yahoo.com';
+            const successMessage = document.getElementById('successMessage');
 
             if (form) {
                 form.addEventListener('submit', function(event) {
-                    // 1. Prevent the default form submission (which would try to navigate the page)
                     event.preventDefault();
 
-                    // 2. Gather form data 
-                    const name = document.getElementById('name').value;
-                    const address = document.getElementById('address').value;
-                    const contact = document.getElementById('contact').value;
-                    const details = document.getElementById('details').value;
+                    const name = document.getElementById('name').value.trim();
+                    const address = document.getElementById('address').value.trim();
+                    const contact = document.getElementById('contact').value.trim();
+                    const details = document.getElementById('details').value.trim();
 
-                    // 3. Construct the email subject (Manually encoded)
-                    const emailSubject = 'New%20Quote%20Request%20from%20WintermereLawn.com';
-                    
-                    // 4. CRITICAL FIX: Construct the email body using the JavaScript newline character (\n)
-                    // The browser is usually responsible for translating \n to %0A or %0D%0A in the URL.
-                    let emailBodyContent = 
-                        'Quote Request Details:\n\n' + 
+                    const subject = encodeURIComponent('New Quote Request from WintermereLawn.com');
+                    const body = encodeURIComponent(
+                        `Quote Request Details:\n\n` +
                         `Full Name: ${name}\n` +
                         `Service Address: ${address}\n` +
                         `Contact Info (Phone/Email): ${contact}\n\n` +
-                        'Optional Details:\n' +
-                        `${details}\n\n` +
-                        '-- Sent via Wintermere Lawn Website Form --';
+                        `Optional Details:\n${details}\n\n` +
+                        `-- Sent via Wintermere Lawn Website Form --`
+                    );
 
-                    // 5. Encode the entire body, replacing spaces with '+'
-                    // This is the last step to ensure any special characters are safe.
-                    let emailBody = encodeURIComponent(emailBodyContent)
-                        .replace(/%20/g, '+'); // Replace %20 (space) with + for better form compatibility
-
-                    // 6. Construct the full mailto link with subject and body parameters
-                    const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
-                    
-                    // 7. Open the user's default email client
+                    const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
                     window.location.href = mailtoLink;
+
+                    successMessage.classList.remove('hidden');
+                    successMessage.style.opacity = '1';
+                    setTimeout(() => {
+                        successMessage.style.opacity = '0';
+                        setTimeout(() => successMessage.classList.add('hidden'), 1000);
+                    }, 4000);
+
+                    form.reset();
                 });
             }
         });
     </script>
-
 </body>
 </html>
