@@ -219,8 +219,7 @@
 
         /**
          * FINAL FIX: Handles form submission using JavaScript to construct a reliable mailto: link 
-         * that fixes the body encoding issue by removing the final encodeURIComponent call 
-         * and performing a global replacement of spaces.
+         * that uses the single Line Feed (%0A) character for maximum compatibility.
          */
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('quoteForm');
@@ -237,25 +236,25 @@
                     const contact = document.getElementById('contact').value;
                     const details = document.getElementById('details').value;
 
-                    // 3. Construct the email subject (Still manually encoded for reliability)
+                    // 3. Construct the email subject (Manually encoded)
                     const emailSubject = 'New%20Quote%20Request%20from%20WintermereLawn.com';
                     
-                    // 4. Construct the email body using URL-encoded line breaks (%0D%0A)
-                    // We intentionally leave the line breaks encoded here.
-                    let emailBodyContent = 
-                        'Quote Request Details:%0D%0A%0D%0A' +
-                        `Full Name: ${name}%0D%0A` +
-                        `Service Address: ${address}%0D%0A` +
-                        `Contact Info (Phone/Email): ${contact}%0D%0A%0D%0A` +
-                        'Optional Details:%0D%0A' +
-                        `${details}%0D%0A%0D%0A` +
+                    // 4. Construct the email body using the single Line Feed character (%0A)
+                    const emailBodyContent = 
+                        'Quote Request Details:%0A%0A' + // Using only %0A
+                        `Full Name: ${name}%0A` +
+                        `Service Address: ${address}%0A` +
+                        `Contact Info (Phone/Email): ${contact}%0A%0A` +
+                        'Optional Details:%0A' +
+                        `${details}%0A%0A` +
                         '-- Sent via Wintermere Lawn Website Form --';
 
-                    // 5. CRITICAL FIX: Replace all spaces with '+' and also encode other special characters
-                    // This uses the traditional 'application/x-www-form-urlencoded' standard 
-                    // which is often decoded better by email clients.
+                    // 5. CRITICAL FIX: Encode the entire body, then replace %20 (spaces) with + 
+                    // This forces the email client to decode the body as form data.
                     let emailBody = encodeURIComponent(emailBodyContent)
-                        .replace(/%20/g, '+'); // Replace %20 (space) with +
+                        .replace(/%0D/g, '') // Ensure no %0D (carriage return) is left over
+                        .replace(/%0A/g, '%0A') // Keep the single line feed encoded
+                        .replace(/%20/g, '+'); // Replace spaces with +
 
                     // 6. Construct the full mailto link with subject and body parameters
                     const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
