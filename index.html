@@ -20,11 +20,15 @@
       background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('https://placehold.co/222/FFF');
       background-size: cover; background-position: center;
     }
+
+    /* Pop banner glow */
+    .glow-green {
+      box-shadow: 0 0 20px rgba(50, 184, 135, 0.6);
+    }
   </style>
 </head>
 <body class="text-mint antialiased">
 
-  <!-- HEADER -->
   <header class="sticky top-0 z-50 shadow-lg bg-gray-900/90 backdrop-blur-sm">
     <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
       <a href="#" class="flex items-center space-x-3 text-2xl font-extrabold text-primary-green tracking-wider logo-font">
@@ -32,7 +36,6 @@
         <span>Wintermere Lawn</span>
       </a>
 
-      <!-- Green button with white text -->
       <a href="#quote" onclick="scrollToQuote(event)"
          class="px-5 py-2 text-sm font-bold rounded-full shadow-lg transition duration-300 hover:scale-[1.05] focus:outline-none"
          style="background-color: #32B887; color: #ffffff; box-shadow: 0 8px 20px rgba(50,184,135,0.22); border: 1px solid rgba(255,255,255,0.06);">
@@ -41,16 +44,20 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
   <main>
-    <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
+    <section class="hero-bg h-[60vh] md:h-[80vh] flex flex-col items-center justify-center text-center relative">
+
+      <a href="#quote" onclick="scrollToQuote(event)"
+         class="absolute top-6 px-6 py-3 bg-primary-green text-white font-extrabold text-lg rounded-full glow-green transition transform hover:scale-[1.15] hover:bg-opacity-90 animate-pulse">
+        🌿 Get 1st Cut FREE!
+      </a>
+
       <div class="p-6 md:p-12 max-w-4xl">
         <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight text-mint">Flawless Lawns, Effortless Living.</h1>
         <p class="text-xl sm:text-2xl font-light text-primary-green">Specializing in Premium Mowing Services for <span class="font-bold">Winter Garden</span> & <span class="font-bold">Windermere, FL</span>.</p>
       </div>
     </section>
 
-    <!-- OUR PROMISE -->
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-mint">Our Promise</h2>
@@ -72,11 +79,13 @@
       </div>
     </section>
 
-    <!-- QUOTE FORM -->
     <section id="quote" class="py-16 md:py-24 bg-gray-900">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-primary-green">Get a Free Quote</h2>
-        <p class="text-center text-xl mb-12 text-mint">Tell us about your lawn and we'll be in touch with a personalized estimate.</p>
+        <p class="text-center text-xl mb-12 text-mint">
+          Tell us about your lawn and we'll be in touch with a personalized estimate.<br>
+          <span class="font-extrabold text-primary-green">Get the first cut FREE when you sign up for the 2026 weekly cut!!!</span>
+        </p>
 
         <div id="successMessage" class="hidden p-4 mb-8 text-lg font-semibold text-center rounded-lg bg-primary-green text-gray-900 shadow-xl transition duration-300 opacity-0">
           Thank you for your submission! Your email client should be opening now.
@@ -110,7 +119,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="py-12 md:py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
         <h2 class="text-4xl font-bold mb-4 text-mint">Contact Us</h2>
@@ -129,12 +137,10 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="bg-gray-900 py-6 mt-12">
     <div class="container mx-auto px-4 text-center text-sm text-gray-400">&copy; 2025 Wintermere Lawn. Servicing Winter Garden & Windermere, FL.</div>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     function scrollToQuote(event) {
       event.preventDefault();
