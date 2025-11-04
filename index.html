@@ -24,20 +24,21 @@
 </head>
 <body class="text-mint antialiased">
 
+  <!-- HEADER -->
   <header class="sticky top-0 z-50 shadow-lg bg-gray-900/90 backdrop-blur-sm">
     <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
       <a href="#" class="flex items-center space-x-3 text-2xl font-extrabold text-primary-green tracking-wider logo-font">
         <img src="https://placehold.co/32x32/32B887/000?text=WL" alt="Wintermere Lawn Logo" class="h-8 w-8 rounded-full">
         <span>Wintermere Lawn</span>
       </a>
-      <div class="p-2 bg-primary-green rounded-full shadow-lg transition duration-300 hover:scale-[1.05]">
-        <a href="#quote" onclick="scrollToQuote(event)" class="px-4 py-2 text-sm font-bold rounded-full bg-transparent text-gray-900 hover:bg-white/10 transition">
-          Get a Free Quote
-        </a>
-      </div>
-      </nav>
+      <a href="#quote" onclick="scrollToQuote(event)" 
+         class="px-5 py-2 text-sm font-bold rounded-full bg-primary-green text-gray-900 shadow-lg transition duration-300 hover:bg-opacity-80 hover:scale-[1.05]">
+        Get a Free Quote
+      </a>
+    </nav>
   </header>
 
+  <!-- HERO SECTION -->
   <main>
     <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
       <div class="p-6 md:p-12 max-w-4xl">
@@ -46,6 +47,7 @@
       </div>
     </section>
 
+    <!-- OUR PROMISE -->
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-mint">Our Promise</h2>
@@ -67,6 +69,7 @@
       </div>
     </section>
 
+    <!-- QUOTE FORM -->
     <section id="quote" class="py-16 md:py-24 bg-gray-900">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center text-primary-green">Get a Free Quote</h2>
@@ -104,6 +107,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="py-12 md:py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
         <h2 class="text-4xl font-bold mb-4 text-mint">Contact Us</h2>
@@ -122,12 +126,13 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="bg-gray-900 py-6 mt-12">
     <div class="container mx-auto px-4 text-center text-sm text-gray-400">&copy; 2025 Wintermere Lawn. Servicing Winter Garden & Windermere, FL.</div>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
-    // Smooth scrolling helper
     function scrollToQuote(event) {
       event.preventDefault();
       const id = event.currentTarget.getAttribute('href').substring(1);
@@ -147,7 +152,6 @@
         const contact = document.getElementById('contact').value.trim();
         const details = document.getElementById('details').value.trim();
 
-        // Build the plain text body (no encoding yet)
         const plainBody =
 `Quote Request Details:
 
@@ -160,20 +164,12 @@ ${details}
 
 -- Sent via Wintermere Lawn Website Form --`;
 
-        // 1) encodeURIComponent() -> produces %20 for spaces and %0A for newlines
-        // 2) replace %0A (LF) with %0D%0A (CRLF) which many mail clients prefer for line breaks
         const encodedBody = encodeURIComponent(plainBody).replace(/%0A/g, '%0D%0A');
-
-        // Subject (encoded)
         const encodedSubject = encodeURIComponent('New Quote Request from WintermereLawn.com');
-
-        // Construct mailto with percent-encoded values (no '+' for spaces)
         const mailto = `mailto:${recipientEmail}?subject=${encodedSubject}&body=${encodedBody}`;
 
-        // Open the user's email client
         window.location.href = mailto;
 
-        // Brief success message
         successMessage.classList.remove('hidden');
         successMessage.style.opacity = '1';
         setTimeout(() => {
